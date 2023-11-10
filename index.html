@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">
+                <img src="img/calendar-icon.svg" alt="">
+                <h1>Today</h1>
+            </div>
+            <div class="sort ">
+                <button class="btn-sort">
+                    <img src="img/menu-icon.svg" alt="">
+                </button>
+                <ul class="menu-sort hide">
+                    <li id="all"> All </li>
+                    <li id="completed"> Completed </li>
+                    <li id="inProgress"> InProgress </li>
+                    <li id="removed"> Removed </li>
+                </ul>
+            </div>
+
+        </header>
+        <main>
+            <ul class="todos"></ul>
+
+            <button class="btn_add hidden">
+                <img src="img/plus-icon.svg" alt="">
+                <span>Create New Item</span>
+            </button>
+        </main>
+    </div>
+    <div class="overlay showHide">
+        <div class="modal">
+            <input type="text" class="modalInput">
+            <div class="btns_modal">
+                <button class="btn_modal save ">Save</button>
+                <button class="btn_modal cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="overlayForEdit showHide">
+        <div class="modal">
+            <input type="text" class="modalInputEdit">
+            <div class="btns_modal">
+                <button class="btn_modal saveEdit ">Save</button>
+                <button class="btn_modal cancelEdit">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

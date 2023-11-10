@@ -1,0 +1,290 @@
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("fonts/Roboto-Bold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e5e5e5;
+  height: 100vh;
+  font-family: "Roboto-Regular";
+
+  color: #4e4e4e;
+}
+
+.container {
+  width: 60%;
+  height: 70vh;
+  margin: 15vh auto;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem 1.25rem;
+  overflow: hidden;
+}
+
+/* header*/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand img {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+main {
+  margin-top: 3.125rem;
+}
+
+/* todo list*/
+.todos {
+  height: 300px;
+  overflow-y: auto;
+}
+
+.todo-item {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo-text {
+  display: flex;
+  align-items: center;
+}
+
+.todo-item:hover {
+  box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+
+.todo-item:hover .btn-delete {
+  opacity: 1;
+}
+
+/* completed todo style */
+.completed {
+  color: #4e4e4e;
+}
+
+.completed .strike {
+  text-decoration: line-through;
+}
+
+/* buttons */
+.btn-sort {
+  border: none;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.btn-sort img {
+  width: 40px;
+}
+
+.btn-sort:hover {
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 5px 5px 0px 0px;
+}
+
+.btn_add {
+  color: #3d82eb;
+  background-color: #fff;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.btn_add img {
+  width: 30px;
+  margin-right: 15px;
+}
+
+.btn-delete {
+  background-color: #fff;
+  opacity: 0;
+}
+
+.btn-delete img {
+  width: 30px;
+}
+
+.btn-check {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid rgb(70, 69, 69);
+  background-color: #fff;
+  margin-right: 15px;
+  position: relative;
+}
+
+.todo-item.completed .btn-check::before {
+  content: "✔";
+  color: #fff;
+  text-decoration: none;
+}
+
+.todo-item.completed .btn-check {
+  background-color: rgba(70, 69, 69);
+}
+
+/* sort menu */
+
+.sort {
+  position: relative;
+}
+
+.menu-sort {
+  position: absolute;
+  z-index: 5;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.15);
+  border-radius: 5px 0px 5px 5px;
+  transition: all 0.2s ease-out;
+}
+
+.menu-sort li {
+  border-bottom: 1px solid #ececec;
+  padding: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu-sort li:hover {
+  color: #3d82eb;
+}
+
+.hide {
+  visibility: hidden;
+  transform: translateX(200px);
+}
+
+/* MODAL */
+.hidden {
+  visibility: hidden;
+}
+
+.showHide {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay,
+.overlayForEdit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(50, 50, 50, 0.9);
+  z-index: 5;
+}
+
+input {
+  padding: 10px 25px;
+  width: 100%;
+  font-family: sans-serif;
+  border-radius: 10px;
+}
+
+.btns_modal {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.btn_modal {
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn_modal:active {
+  transform: scale(0.80);
+}
+
+.save,
+.saveEdit {
+  background-color: green;
+  color: #fff;
+}
+
+.cancel,
+.cancelEdit {
+  background-color: red;
+  color: #fff;
+}
+
+.btns {
+  display: flex;
+  gap: 20px;
+}
+
+.editBtn,
+.edit {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: all .1s linear;
+  border: none;
+  box-shadow: 1px 1px 5px 1px;
+}
+
+.editBtn:active {
+  transform: scale(0.8);
+}
